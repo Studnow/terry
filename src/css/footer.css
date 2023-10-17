@@ -1,0 +1,17 @@
+.foot {
+  @apply p-10 bg-white flex flex-col gap-8;
+}
+
+.navbar-bot {
+  @apply navbar flex-col md:flex-row;
+}
+
+.nav-link {
+  @apply flex gap-4 items-center hover:scale-125 transition duration-300;
+}
+.link-social {
+  @apply hover:text-primary rounded-full border-2 border-neutral hover:border-primary p-2;
+}
+.link-social .icon {
+  @apply w-6 h-6;
+}
