@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 
 import handlebars from "vite-plugin-handlebars";
 import { resolve } from "path";
-import { webfontDownload } from "vite-plugin-webfont-dl";
+// import { webfontDownload } from "vite-plugin-webfont-dl";
 
 function handlebarsOverride(options) {
   const plugin = handlebars(options);
@@ -16,6 +16,11 @@ export default defineConfig({
   base: "/terry/", // for deploy to gh-pages base = outDir
   build: {
     outDir: "terry",
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+      },
+    },
   },
   plugins: [
     handlebarsOverride({
@@ -24,12 +29,13 @@ export default defineConfig({
       },
       partialDirectory: [
         resolve(__dirname, "./src/partials"),
+        resolve(__dirname, "./src/partials/blocks"),
         resolve(__dirname, "./src/partials/nav"),
         resolve(__dirname, "./src/partials/content"),
         resolve(__dirname, "./src/partials/content/components"),
       ],
     }),
     // handlebars({}),
-    webfontDownload(),
+    // webfontDownload(),
   ],
 });
