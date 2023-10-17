@@ -1,2 +1,2 @@
 # terry
-## UI for terrycloth product landing page
+UI for terrycloth product landing page
